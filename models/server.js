@@ -21,6 +21,7 @@ class Server {
     routes(){
         this.app.post('/api', (req, res) => {
             const body = req.body;
+            console.log("--body-->", body);
 
             res.json({
                 ok: true,
