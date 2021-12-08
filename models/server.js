@@ -1,4 +1,7 @@
 const express = require('express')
+const fs = require('fs');
+
+
 
 class Server {
     
@@ -21,7 +24,14 @@ class Server {
     routes(){
         this.app.post('/api', (req, res) => {
             const body = req.body;
-            console.log("--body-->", body);
+            //console.log("--body-->", body);
+            const myJSON = JSON.stringify(body);
+
+            fs.appendFile("example_file.txt", myJSON, (err) => {
+                if (err) {
+                  console.log(err);
+                }
+              });
 
             res.json({
                 ok: true,
