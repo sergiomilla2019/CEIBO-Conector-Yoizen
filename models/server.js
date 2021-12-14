@@ -24,7 +24,7 @@ class Server {
         this.app.use(express.static('public'));
     }
 
-    routes(){
+    async routes(){
         this.app.post('/api', (req, res) => {
             const body = req.body;
             //console.log("--body-->", body);
@@ -36,7 +36,26 @@ class Server {
                 }
               });
 
-            // Generate test SMTP service account from ethereal.email
+              sendEmail(body);
+            
+            res.json({
+                ok: true,
+                msg: "post API",
+                body
+            });
+        });
+        
+    }
+
+    listen(){
+        this.app.listen(this.port, () => {
+            console.log('Servidor corriendo en puerto', this.port)
+        });
+    }
+}
+
+async function sendEmail(body){
+    // Generate test SMTP service account from ethereal.email
             // Only needed if you don't have a real mail account for testing
             let testAccount = await nodemailer.createTestAccount();
 
@@ -57,7 +76,7 @@ class Server {
                 to: "sergiomilla2019@gmail.com", // list of receivers
                 subject: "Hello ✔", // Subject line
                 text: "Hello world?", // plain text body
-                html: `<b>${body}</b>`, // html body
+                html: `<b>${JSON.stringify(body)}</b>`, // html body
                 headers: {
                     'X-YoizenSocial-SenderMail': 'sergiomilla2019@gmail.com',
                     'X-YoizenSocial-SenderName': 'Sergio',
@@ -71,20 +90,6 @@ class Server {
             // Preview only available when sending through an Ethereal account
             console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));  
 
-            res.json({
-                ok: true,
-                msg: "post API",
-                body
-            });
-        });
-        
-    }
-
-    listen(){
-        this.app.listen(this.port, () => {
-            console.log('Servidor corriendo en puerto', this.port)
-        });
-    }
 }
 
 module.exports = Server;
