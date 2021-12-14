@@ -36,7 +36,7 @@ class Server {
             const body = req.body;
             const myJSON = JSON.stringify(body);
 
-              //const msj = JSON.stringify(req);
+              const msj = JSON.stringify(body);
               sendEmail(body);
 
             console.log("--req-->", req.body);
