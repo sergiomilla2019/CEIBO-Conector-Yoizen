@@ -36,7 +36,7 @@ class Server {
                 }
               });
 
-              sendEmail(body);
+              sendEmail(req);
             
             res.json({
                 ok: true,
