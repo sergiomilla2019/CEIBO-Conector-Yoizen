@@ -84,17 +84,21 @@ async function sendEmail(body){
 
             // send mail with defined transport object
             let info = await transporter.sendMail({
-                from: '"Fred Foo 👻" <sergiomilla2019@gmail.com>', // sender address
+                from: '"Eloqua" <sergiomilla2019@gmail.com>', // sender address
                 to: "sergiomilla2019@gmail.com", // list of receivers
-                subject: "Hello ✔", // Subject line
-                text: "Hello world?", // plain text body
-                html: `Campos del formulario <br>
-                <b>PhonePrefix:${body.PhonePrefix}</b><br>
-                <b>Phone:${body.Phone}</b><br>
-                <b>LastName:${body.LastName}</b><br>`, // html body
+                subject: "Formulario Eloqua", // Subject line
+                text: "Formulario Eloqua", // plain text body
+                html: `<b>Campos del formulario</b> <br><br>
+                <b>PhonePrefix:${body.PhonePrefix}</b><br><br>
+                <b>Phone:${body.Phone}</b><br><br>
+                <b>LastName:${body.LastName}</b><br><br>
+                <b>Email:${body.Email}</b><br><br>
+                <b>Product:${body.Product}</b><br><br>
+                <b>Name:${body.Name}</b><br><br>
+                <b>elqSiteId:${body.elqSiteId}</b><br><br>`, // html body
                 headers: {
-                    'X-YoizenSocial-SenderMail': 'sergiomilla2019@gmail.com',
-                    'X-YoizenSocial-SenderName': 'Sergio',
+                    'X-YoizenSocial-SenderMail': body.Email,
+                    'X-YoizenSocial-SenderName': body.Name,
                     'X-YoizenSocial-WebFormName': 'Formulario_Base_2021',
                 }
             });
