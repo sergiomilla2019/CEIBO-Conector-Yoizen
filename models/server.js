@@ -88,7 +88,7 @@ async function sendEmail(body){
                 to: "sergiomilla2019@gmail.com", // list of receivers
                 subject: "Formulario Eloqua", // Subject line
                 text: "Formulario Eloqua", // plain text body
-                html: `<b>Campos del formulario</b> <br><br>
+                html: `<br><u><b>Campos del formulario</b></u> <br><br>
                 <b>PhonePrefix:${body.PhonePrefix}</b><br><br>
                 <b>Phone:${body.Phone}</b><br><br>
                 <b>LastName:${body.LastName}</b><br><br>
