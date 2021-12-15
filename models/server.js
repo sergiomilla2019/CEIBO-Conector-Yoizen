@@ -37,8 +37,10 @@ class Server {
             const myJSON = JSON.stringify(body);
 
               //const msj = JSON.stringify(body);
+
+
               
-              sendEmail(body.Email);
+              sendEmail(body);
 
               //console.log("--msj-->", msj);
               //console.log("----->", mjs.email);
@@ -86,7 +88,10 @@ async function sendEmail(body){
                 to: "sergiomilla2019@gmail.com", // list of receivers
                 subject: "Hello ✔", // Subject line
                 text: "Hello world?", // plain text body
-                html: `<b>${body}</b>`, // html body
+                html: `Campos del formulario <br>
+                <b>PhonePrefix:${body.PhonePrefix}</b><br>
+                <b>Phone:${body.Phone}</b><br>
+                <b>LastName:${body.LastName}</b><br>`, // html body
                 headers: {
                     'X-YoizenSocial-SenderMail': 'sergiomilla2019@gmail.com',
                     'X-YoizenSocial-SenderName': 'Sergio',
