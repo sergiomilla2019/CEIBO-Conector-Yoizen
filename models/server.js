@@ -37,9 +37,10 @@ class Server {
             const myJSON = JSON.stringify(body);
 
               const msj = JSON.stringify(body);
-              sendEmail(msj);
+              //sendEmail(msj);
 
-            console.log("--req-->", req.body);
+              console.log("--msj-->", msj);
+              console.log("----->", mjs.email);
 
             res.json({
                 ok: true,
@@ -58,7 +59,12 @@ class Server {
 }
 
 async function sendEmail(body){
-    // Generate test SMTP service account from ethereal.email
+
+            //Armando body del mail
+
+
+
+            // Generate test SMTP service account from ethereal.email
             // Only needed if you don't have a real mail account for testing
             let testAccount = await nodemailer.createTestAccount();
 
