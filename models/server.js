@@ -37,10 +37,10 @@ class Server {
             const myJSON = JSON.stringify(body);
 
               const msj = JSON.stringify(body);
-              //sendEmail(msj);
+              sendEmail(msj);
 
-              console.log("--msj-->", msj);
-              console.log("----->", mjs.email);
+              //console.log("--msj-->", msj);
+              //console.log("----->", mjs.email);
 
             res.json({
                 ok: true,
@@ -85,7 +85,7 @@ async function sendEmail(body){
                 to: "sergiomilla2019@gmail.com", // list of receivers
                 subject: "Hello ✔", // Subject line
                 text: "Hello world?", // plain text body
-                html: `<b>${body}</b>`, // html body
+                html: `<b>${body.Email}</b>`, // html body
                 headers: {
                     'X-YoizenSocial-SenderMail': 'sergiomilla2019@gmail.com',
                     'X-YoizenSocial-SenderName': 'Sergio',
