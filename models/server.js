@@ -85,7 +85,7 @@ async function sendEmail(body){
             // send mail with defined transport object
             let info = await transporter.sendMail({
                 from: '"Eloqua" <sergiomilla2019@gmail.com>', // sender address
-                to: "ventapymes@teco.com.ar", // list of receivers
+                to: "sergiomilla2019@gmail.com", // list of receivers ventapymes@teco.com.ar
                 subject: "Formulario Eloqua", // Subject line
                 text: "Formulario Eloqua", // plain text body
                 html: `<br><u><b>Campos del formulario</b></u> <br><br>
