@@ -77,14 +77,14 @@ async function sendEmail(body){
                 port: 587,
                 secure: false, // true for 465, false for other ports
                 auth: {
-                user: 'sergiomilla2019@gmail.com', // generated ethereal user
-                pass: 'hlhkgfhjmthyxafc', // generated ethereal password
+                user: 'conectoryoizeneloqua@gmail.com', // generated ethereal user
+                pass: 'ceibo.2021', // generated ethereal password
                 },
             });
 
             // send mail with defined transport object
             let info = await transporter.sendMail({
-                from: '"Eloqua" <sergiomilla2019@gmail.com>', // sender address
+                from: '"Eloqua" <conectoryoizeneloqua@gmail.com>', // sender address
                 to: "ventapymes@teco.com.ar", // list of receivers ventapymes@teco.com.ar
                 subject: "Formulario Eloqua", // Subject line
                 text: "Formulario Eloqua", // plain text body
