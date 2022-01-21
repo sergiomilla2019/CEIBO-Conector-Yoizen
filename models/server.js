@@ -89,16 +89,16 @@ async function sendEmail(body){
                 subject: "Formulario Eloqua", // Subject line
                 text: "Formulario Eloqua", // plain text body
                 html: `<br><u><b>Campos del formulario</b></u> <br><br>
-                <b>PhonePrefix:${body.PhonePrefix}</b><br><br>
-                <b>Phone:${body.Phone}</b><br><br>
-                <b>LastName:${body.LastName}</b><br><br>
-                <b>Email:${body.Email}</b><br><br>
-                <b>Product:${body.Product}</b><br><br>
-                <b>Name:${body.Name}</b><br><br>
-                <b>elqSiteId:${body.elqSiteId}</b><br><br>`, // html body
+                <b>PhonePrefix:${body?.PhonePrefix}</b><br><br>
+                <b>Phone:${body?.Phone}</b><br><br>
+                <b>LastName:${body?.LastName}</b><br><br>
+                <b>Email:${body?.Email}</b><br><br>
+                <b>Product:${body?.Product}</b><br><br>
+                <b>Name:${body?.Name}</b><br><br>
+                <b>elqSiteId:${body?.elqSiteId}</b><br><br>`, // html body
                 headers: {
-                    'X-YoizenSocial-SenderMail': body.Email,
-                    'X-YoizenSocial-SenderName': body.Name,
+                    'X-YoizenSocial-SenderMail': body?.Email,
+                    'X-YoizenSocial-SenderName': body?.Name,
                     'X-YoizenSocial-WebFormName': 'Formulario_Base_2021',
                 }
             });
