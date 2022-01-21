@@ -78,7 +78,7 @@ async function sendEmail(body){
                 secure: false, // true for 465, false for other ports
                 auth: {
                 user: 'conectoryoizeneloqua@gmail.com', // generated ethereal user
-                pass: 'ceibo.2021', // generated ethereal password
+                pass: '2022.C31B0', // generated ethereal password
                 },
             });
 
